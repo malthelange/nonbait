@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da866ef8-f759-4b85-a535-6fd0b1852791" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nonbait.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/options.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/options.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/options.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/popup/popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/popup/popup.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/popup/popup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/content-script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-worker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/popup/popup.html" beforeDir="false" afterPath="$PROJECT_DIR$/popup/popup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/service-worker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +38,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/mng/IdeaProjects/nonbait/options"
+    "last_opened_file_path": "C:/Users/mng/IdeaProjects/nonbait/options",
+    "nodejs_package_manager_path": "npm"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -64,11 +55,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691093988828</updated>
-      <workItem from="1691093990155" duration="795000" />
+      <workItem from="1691093990155" duration="4802000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit.">
+      <created>1691094835064</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1691094835064</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit." />
   </component>
 </project>
