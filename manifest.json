@@ -1,0 +1,23 @@
+{
+  "name": "Non-bait",
+  "version": "0.1",
+  "description": "The extension allows you to replace clickbait headlines",
+  "default_locale": "da",
+  "icons": {
+  },
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "manifest_version": 3
+}
