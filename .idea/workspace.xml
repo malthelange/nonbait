@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="da866ef8-f759-4b85-a535-6fd0b1852791" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/popup/popup.html" beforeDir="false" afterPath="$PROJECT_DIR$/popup/popup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/popup/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/popup/popup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/service-worker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +56,7 @@
       <updated>1691093988828</updated>
       <workItem from="1691093990155" duration="4879000" />
       <workItem from="1691674867297" duration="633000" />
-      <workItem from="1691743199983" duration="7547000" />
+      <workItem from="1691743199983" duration="7845000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit.">
       <created>1691094835064</created>
@@ -78,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691750885744</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Able to fetch and parse content of a link">
+      <created>1691757017914</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691757017915</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

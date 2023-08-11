@@ -1,33 +1,34 @@
-const OPENAI_API_KEY = '';
 const OPENAI_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
 
 function queryOpenAI(promptText, callback) {
-    fetch(OPENAI_ENDPOINT, {
-        method: 'POST',
-        headers: {
-            'Authorization': `Bearer ${OPENAI_API_KEY}`,
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            model: "gpt-3.5-turbo",
-            messages: [{
-                role: "user",
-                "content": promptText
-            }],
-            max_tokens: 200
+    getApiKey((apiKey) => {
+        fetch(OPENAI_ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${apiKey}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                model: "gpt-3.5-turbo",
+                messages: [{
+                    role: "user",
+                    "content": promptText
+                }],
+                max_tokens: 200
+            })
         })
-    })
-        .then(response => response.json())
-        .then(data => {
-            if (data.choices && data.choices.length > 0) {
-                callback(null, data.choices[0].message.content);
-            } else {
-                callback('No completion found.');
-            }
-        })
-        .catch(error => {
-            callback(error.toString());
-        });
+            .then(response => response.json())
+            .then(data => {
+                if (data.choices && data.choices.length > 0) {
+                    callback(null, data.choices[0].message.content);
+                } else {
+                    callback('No completion found.');
+                }
+            })
+            .catch(error => {
+                callback(error.toString());
+            });
+    });
 }
 
 chrome.contextMenus.onClicked.addListener(onClick);
@@ -58,4 +59,10 @@ function onClick(info, tab) {
                 }
             });
         }))
+}
+
+function getApiKey(callback) {
+    chrome.storage.local.get(['apiKey'], (result) => {
+        callback(result.apiKey);
+    });
 }
