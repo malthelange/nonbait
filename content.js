@@ -1,11 +1,29 @@
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.html) {
-        let parser = new DOMParser();
-        let doc = parser.parseFromString(request.html, 'text/html');
-
-        // Now you can access the DOM of the fetched page
-        // For example, get the title:
-        let title = doc.title;
-        console.log(title);
+        const content = parseContent(request.html);
+        sendResponse({content});
     }
 });
+
+function parseContent(htmlString) {
+    // Parse the HTML string
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, 'text/html');
+
+    // Extract title from the <title> tag
+    const title = doc.title;
+
+    // Extract content
+    let content = [];
+    content.push(title);  // Starting with the title
+
+    // Extract and add headlines from h1 to h6 and paragraphs
+    const nodes = doc.querySelectorAll('h1, h2, h3, h4, h5, h6, p');
+    for (let node of nodes) {
+        if(!(node.localName.startsWith('p') && node.textContent.length < 20)){
+            content.push(node.textContent);
+        }
+    }
+    // Convert content array to a single string
+    return content.join('\n');
+}

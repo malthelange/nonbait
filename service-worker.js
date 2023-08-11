@@ -8,14 +8,14 @@ chrome.runtime.onInstalled.addListener(function () {
     });
 });
 
-function onClick(info) {
+function onClick(info, tab) {
     if (info.menuItemId !== 'getHeadline') {
         return;
     }
-    console.log(info.linkUrl);
-    fetch(info.linkUrl)
+    (fetch(info.linkUrl)
         .then((response) => response.text())
-        .then((html) => {
-            chrome.tabs.sendMessage(tab.id, {html});
-        });
+        .then(async (html) => {
+            const response = await chrome.tabs.sendMessage(tab.id, {html});
+            console.log(response.content);
+        }))
 }
