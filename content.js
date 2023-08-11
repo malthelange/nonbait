@@ -4,6 +4,28 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         sendResponse({content});
     }
 });
+var clickedEl = null;
+
+document.addEventListener("contextmenu", function(event){
+    clickedEl = event.target;
+}, true);
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if(request.content) {
+        findParentLink(clickedEl).textContent = request.content;
+    }
+});
+
+function findParentLink(element) {
+    while (element) {
+        if (element.tagName === 'A') {
+            return element;
+        }
+        element = element.parentElement;
+    }
+    return null;
+}
+
 
 function parseContent(htmlString) {
     // Parse the HTML string
