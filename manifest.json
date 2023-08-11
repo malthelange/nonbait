@@ -6,8 +6,10 @@
     "*://*/*"
   ],
   "permissions": [
+    "scripting",
     "storage",
-    "contextMenus"
+    "contextMenus",
+    "activeTab"
   ],
   "background": {
     "service_worker": "service-worker.js"

@@ -80,10 +80,36 @@ function isFacebookRedirectLink(link) {
     return false;
 }
 
+function setCursorWaiting() {
+    document.body.style.cursor = 'wait';
+    console.log('test set')
+
+}
+
+function startCursorWaiting(id) {
+    chrome.scripting.executeScript({
+        target: {tabId: id},
+        func: setCursorWaiting
+    });
+}
+
+function unsetCursorWaiting() {
+    document.body.style.cursor = '';
+    console.log('test unset')
+}
+
+function stopCursorWaiting(id) {
+    chrome.scripting.executeScript({
+        target: {tabId: id},
+        func: unsetCursorWaiting
+    });
+}
+
 function onClick(info, tab) {
     if (info.menuItemId !== 'getHeadline') {
         return;
     }
+    startCursorWaiting(tab.id);
     link = processLink(info.linkUrl);
     (fetch(link)
         .then((response) => response.text())
@@ -99,6 +125,7 @@ function onClick(info, tab) {
                     chrome.tabs.sendMessage(tab.id, {content: result});
                     console.log('Response:', result);
                 }
+                stopCursorWaiting(tab.id);
             });
         }))
 }
