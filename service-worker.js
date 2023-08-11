@@ -40,16 +40,58 @@ chrome.runtime.onInstalled.addListener(function () {
     });
 });
 
-const prePromt = 'can you provide a long headline which summarizes all the most essential information in the following danish article? Please provide the headline in danish\n'
+const prePromt = 'can you provide a long headline which summarizes all the most essential information in the following article? Please provide the headline in danish\n'
+
+function processLink(linkUrl) {
+    if (isFacebookRedirectLink(linkUrl)) {
+        return extractOriginalURLFromFacebook(linkUrl);
+    } else {
+        return linkUrl;
+    }
+}
+
+function extractOriginalURLFromFacebook(facebookURL) {
+    // Parse the URL to get query parameters
+    let url = new URL(facebookURL);
+
+    // Extract the 'u' parameter and decode it
+    let originalURL = url.searchParams.get('u');
+    if (originalURL) {
+        return decodeURIComponent(originalURL);
+    } else {
+        return null; // 'u' parameter not found
+    }
+}
+
+function isFacebookRedirectLink(link) {
+    try {
+        let url = new URL(link);
+
+        // Check if the host is 'l.facebook.com' and the path is '/l.php'
+        if (url.hostname === 'l.facebook.com' && url.pathname === '/l.php') {
+            // Ensure the 'u' query parameter exists
+            return url.searchParams.has('u');
+        }
+    } catch (error) {
+        // If there's an error parsing the link as a URL, it's not a valid link
+        return false;
+    }
+
+    return false;
+}
 
 function onClick(info, tab) {
     if (info.menuItemId !== 'getHeadline') {
         return;
     }
-    (fetch(info.linkUrl)
+    link = processLink(info.linkUrl);
+    (fetch(link)
         .then((response) => response.text())
         .then(async (html) => {
+            console.log(info.linkUrl);
+            console.log(info.html);
             const response = await chrome.tabs.sendMessage(tab.id, {html});
+            console.log(response.content);
             queryOpenAI(prePromt + response.content, (error, result) => {
                 if (error) {
                     console.error('Error:', error);

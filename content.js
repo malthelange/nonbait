@@ -10,9 +10,38 @@ document.addEventListener("contextmenu", function(event){
     clickedEl = event.target;
 }, true);
 
+function isFacebookDomain() {
+    const facebookDomains = ['facebook.com', 'fb.com', 'fb.me'];
+
+    // Get current domain name
+    let currentDomain = window.location.hostname;
+
+    // Check if the current domain is a subdomain or the exact domain of Facebook
+    return facebookDomains.some(domain => {
+        return currentDomain === domain || currentDomain.endsWith('.' + domain);
+    });
+}
+
+function handleFacebookSpecificInjection(content) {
+    span = findDeepestSpan(clickedEl);
+    span.textContent = content;
+}
+
+function handlePageSpecificInjection(content) {
+    if(isFacebookDomain()) {
+        handleFacebookSpecificInjection(content);
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if(request.content) {
-        findParentLink(clickedEl).textContent = request.content;
+        if(!handlePageSpecificInjection(request.content)) {
+            findParentLink(clickedEl).textContent = request.content;
+        }
     }
 });
 
@@ -48,4 +77,32 @@ function parseContent(htmlString) {
     }
     // Convert content array to a single string
     return content.join('\n');
+}
+
+function findDeepestSpan(node) {
+    // Base cases
+    if (node.nodeType !== Node.ELEMENT_NODE) return null;
+    if (node.tagName.toLowerCase() === 'span' && !node.querySelector('span')) return node;
+
+    // Recursively search children
+    let deepestSpan = null;
+    let maxDepth = -1;
+
+    for (let child of node.children) {
+        let result = findDeepestSpan(child);
+        if (result) {
+            let depth = getDepth(result, 0);
+            if (depth > maxDepth) {
+                maxDepth = depth;
+                deepestSpan = result;
+            }
+        }
+    }
+
+    return deepestSpan;
+}
+
+function getDepth(node, depth) {
+    if (!node.parentElement || node.tagName.toLowerCase() === 'body') return depth;
+    return getDepth(node.parentElement, depth + 1);
 }
