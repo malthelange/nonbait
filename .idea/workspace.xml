@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da866ef8-f759-4b85-a535-6fd0b1852791" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/images/icon-128.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/icon-16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/icon-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/icon-32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/icon-64.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +58,7 @@
       <workItem from="1691093990155" duration="4879000" />
       <workItem from="1691674867297" duration="633000" />
       <workItem from="1691743199983" duration="12314000" />
-      <workItem from="1691764354072" duration="2145000" />
+      <workItem from="1691764354072" duration="2200000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit.">
       <created>1691094835064</created>
@@ -115,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691765971420</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added icon">
+      <created>1691766530362</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1691766530362</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +128,7 @@
     <MESSAGE value="Able to fetch and parse content of a link" />
     <MESSAGE value="Added special handling for facebook links" />
     <MESSAGE value="added loading cursor" />
-    <option name="LAST_COMMIT_MESSAGE" value="added loading cursor" />
+    <MESSAGE value="added icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="added icon" />
   </component>
 </project>
