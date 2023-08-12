@@ -1,10 +1,10 @@
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((request: any, sender: any, sendResponse: any) => {
     if (request.html) {
         const content = parseContent(request.html);
         sendResponse({content});
     }
 });
-var clickedEl = null;
+var clickedEl: any = null;
 
 document.addEventListener("contextmenu", function(event){
     clickedEl = event.target;
@@ -22,12 +22,12 @@ function isFacebookDomain() {
     });
 }
 
-function handleFacebookSpecificInjection(content) {
-    span = findDeepestSpan(clickedEl);
+function handleFacebookSpecificInjection(content: any) {
+    const span = findDeepestSpan(clickedEl);
     span.textContent = content;
 }
 
-function handlePageSpecificInjection(content) {
+function handlePageSpecificInjection(content: any) {
     if(isFacebookDomain()) {
         handleFacebookSpecificInjection(content);
         return true;
@@ -45,7 +45,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     }
 });
 
-function findParentLink(element) {
+function findParentLink(element: any) {
     while (element) {
         if (element.tagName === 'A') {
             return element;
@@ -56,7 +56,7 @@ function findParentLink(element) {
 }
 
 
-function parseContent(htmlString) {
+function parseContent(htmlString: any) {
     // Parse the HTML string
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, 'text/html');
@@ -70,6 +70,7 @@ function parseContent(htmlString) {
 
     // Extract and add headlines from h1 to h6 and paragraphs
     const nodes = doc.querySelectorAll('h1, h2, h3, h4, h5, h6, p');
+    // @ts-ignore
     for (let node of nodes) {
         if(!(node.localName.startsWith('p') && node.textContent.length < 20)){
             content.push(node.textContent);
@@ -79,7 +80,7 @@ function parseContent(htmlString) {
     return content.join('\n');
 }
 
-function findDeepestSpan(node) {
+function findDeepestSpan(node: any) {
     // Base cases
     if (node.nodeType !== Node.ELEMENT_NODE) return null;
     if (node.tagName.toLowerCase() === 'span' && !node.querySelector('span')) return node;
@@ -89,7 +90,7 @@ function findDeepestSpan(node) {
     let maxDepth = -1;
 
     for (let child of node.children) {
-        let result = findDeepestSpan(child);
+        let result: any = findDeepestSpan(child);
         if (result) {
             let depth = getDepth(result, 0);
             if (depth > maxDepth) {
@@ -102,7 +103,7 @@ function findDeepestSpan(node) {
     return deepestSpan;
 }
 
-function getDepth(node, depth) {
+function getDepth(node: any, depth: any): any {
     if (!node.parentElement || node.tagName.toLowerCase() === 'body') return depth;
     return getDepth(node.parentElement, depth + 1);
 }

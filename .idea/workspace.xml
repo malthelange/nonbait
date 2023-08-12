@@ -2,12 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da866ef8-f759-4b85-a535-6fd0b1852791" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/firebase/functions/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firebase/functions/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firebase/functions/src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firebase/functions/tsconfig.dev.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firebase/functions/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/content.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/extension/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/options/options.css" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/options/options.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/options/options.html" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/options/options.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/options/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/options/options.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/popup/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/popup/popup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/popup/popup.html" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/popup/popup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/popup/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/popup/popup.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/service-worker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase/firebase.json" beforeDir="false" afterPath="$PROJECT_DIR$/firebase/firebase.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase/functions/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/firebase/functions/src/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +48,11 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/mng/IdeaProjects/nonbait/options",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "ts.external.directory.path": "C:\\Users\\mng\\IdeaProjects\\nonbait\\firebase\\functions\\node_modules\\typescript\\lib"
   }
@@ -49,6 +62,8 @@
       <recent name="C:\Users\mng\IdeaProjects\nonbait\options" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mng\IdeaProjects\nonbait\extension\src" />
+      <recent name="C:\Users\mng\IdeaProjects\nonbait\extension\src\popup" />
       <recent name="C:\Users\mng\IdeaProjects\nonbait\extension" />
       <recent name="C:\Users\mng\IdeaProjects\nonbait\images" />
     </key>
@@ -65,7 +80,7 @@
       <workItem from="1691674867297" duration="633000" />
       <workItem from="1691743199983" duration="12314000" />
       <workItem from="1691764354072" duration="2277000" />
-      <workItem from="1691846125668" duration="1747000" />
+      <workItem from="1691846125668" duration="7241000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit.">
       <created>1691094835064</created>
@@ -151,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691847218753</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added hello world firebase function">
+      <created>1691847906836</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1691847906836</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +188,7 @@
     <MESSAGE value="added icon" />
     <MESSAGE value="moved extension to separate folder" />
     <MESSAGE value="Initialized firebase" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initialized firebase" />
+    <MESSAGE value="added hello world firebase function" />
+    <option name="LAST_COMMIT_MESSAGE" value="added hello world firebase function" />
   </component>
 </project>

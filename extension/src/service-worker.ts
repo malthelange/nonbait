@@ -1,7 +1,7 @@
 const OPENAI_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
 
-function queryOpenAI(promptText, callback) {
-    getApiKey((apiKey) => {
+function queryOpenAI(promptText: any, callback: any) {
+    getApiKey((apiKey: any) => {
         fetch(OPENAI_ENDPOINT, {
             method: 'POST',
             headers: {
@@ -42,7 +42,7 @@ chrome.runtime.onInstalled.addListener(function () {
 
 const prePromt = 'can you provide a long headline which summarizes all the most essential information in the following article? Please provide the headline in danish\n'
 
-function processLink(linkUrl) {
+function processLink(linkUrl: any) {
     if (isFacebookRedirectLink(linkUrl)) {
         return extractOriginalURLFromFacebook(linkUrl);
     } else {
@@ -50,7 +50,7 @@ function processLink(linkUrl) {
     }
 }
 
-function extractOriginalURLFromFacebook(facebookURL) {
+function extractOriginalURLFromFacebook(facebookURL: any) {
     // Parse the URL to get query parameters
     let url = new URL(facebookURL);
 
@@ -63,7 +63,7 @@ function extractOriginalURLFromFacebook(facebookURL) {
     }
 }
 
-function isFacebookRedirectLink(link) {
+function isFacebookRedirectLink(link: any) {
     try {
         let url = new URL(link);
 
@@ -86,7 +86,7 @@ function setCursorWaiting() {
 
 }
 
-function startCursorWaiting(id) {
+function startCursorWaiting(id: any) {
     chrome.scripting.executeScript({
         target: {tabId: id},
         func: setCursorWaiting
@@ -98,19 +98,19 @@ function unsetCursorWaiting() {
     console.log('test unset')
 }
 
-function stopCursorWaiting(id) {
+function stopCursorWaiting(id: any) {
     chrome.scripting.executeScript({
         target: {tabId: id},
         func: unsetCursorWaiting
     });
 }
 
-function onClick(info, tab) {
+function onClick(info: any, tab: any) {
     if (info.menuItemId !== 'getHeadline') {
         return;
     }
     startCursorWaiting(tab.id);
-    link = processLink(info.linkUrl);
+    const link = processLink(info.linkUrl);
     (fetch(link)
         .then((response) => response.text())
         .then(async (html) => {
@@ -118,7 +118,7 @@ function onClick(info, tab) {
             console.log(info.html);
             const response = await chrome.tabs.sendMessage(tab.id, {html});
             console.log(response.content);
-            queryOpenAI(prePromt + response.content, (error, result) => {
+            queryOpenAI(prePromt + response.content, (error: any, result: any) => {
                 if (error) {
                     console.error('Error:', error);
                 } else {
@@ -130,7 +130,7 @@ function onClick(info, tab) {
         }))
 }
 
-function getApiKey(callback) {
+function getApiKey(callback: any) {
     chrome.storage.local.get(['apiKey'], (result) => {
         callback(result.apiKey);
     });
