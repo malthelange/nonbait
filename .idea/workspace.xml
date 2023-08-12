@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da866ef8-f759-4b85-a535-6fd0b1852791" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/firebase/firebase.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firebase/firestore.indexes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firebase/firestore.rules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firebase/functions/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firebase/functions/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firebase/functions/src/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firebase/functions/tsconfig.dev.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firebase/functions/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,16 +33,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mng/IdeaProjects/nonbait/options&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/mng/IdeaProjects/nonbait/options",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\mng\\IdeaProjects\\nonbait\\firebase\\functions\\node_modules\\typescript\\lib"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mng\IdeaProjects\nonbait\options" />
@@ -62,7 +65,7 @@
       <workItem from="1691674867297" duration="633000" />
       <workItem from="1691743199983" duration="12314000" />
       <workItem from="1691764354072" duration="2277000" />
-      <workItem from="1691846125668" duration="1073000" />
+      <workItem from="1691846125668" duration="1747000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit.">
       <created>1691094835064</created>
@@ -141,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691846723978</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Initialized firebase">
+      <created>1691847218753</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1691847218753</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
