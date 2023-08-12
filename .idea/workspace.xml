@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da866ef8-f759-4b85-a535-6fd0b1852791" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/services/firestore-service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/content.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/extension/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/extension/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/options/options.css" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/options/options.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/options/options.html" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/options/options.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/options/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/options/options.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/popup/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/popup/popup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/popup/popup.html" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/popup/popup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/popup/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/popup/popup.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/service-worker.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firebase/firebase.json" beforeDir="false" afterPath="$PROJECT_DIR$/firebase/firebase.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/service-worker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/service-worker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firebase/functions/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/firebase/functions/src/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -80,7 +71,7 @@
       <workItem from="1691674867297" duration="633000" />
       <workItem from="1691743199983" duration="12314000" />
       <workItem from="1691764354072" duration="2277000" />
-      <workItem from="1691846125668" duration="7241000" />
+      <workItem from="1691846125668" duration="11566000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit.">
       <created>1691094835064</created>
@@ -173,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691847906836</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added firebase function for adding generated headlines to firestore&#10;Migrated extension from javascript to typescript.">
+      <created>1691854661296</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1691854661296</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +187,7 @@
     <MESSAGE value="moved extension to separate folder" />
     <MESSAGE value="Initialized firebase" />
     <MESSAGE value="added hello world firebase function" />
-    <option name="LAST_COMMIT_MESSAGE" value="added hello world firebase function" />
+    <MESSAGE value="Added firebase function for adding generated headlines to firestore&#10;Migrated extension from javascript to typescript." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added firebase function for adding generated headlines to firestore&#10;Migrated extension from javascript to typescript." />
   </component>
 </project>
