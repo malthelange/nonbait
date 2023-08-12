@@ -41,6 +41,7 @@
       <recent name="C:\Users\mng\IdeaProjects\nonbait\options" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mng\IdeaProjects\nonbait\extension" />
       <recent name="C:\Users\mng\IdeaProjects\nonbait\images" />
     </key>
   </component>
@@ -56,6 +57,7 @@
       <workItem from="1691674867297" duration="633000" />
       <workItem from="1691743199983" duration="12314000" />
       <workItem from="1691764354072" duration="2277000" />
+      <workItem from="1691846125668" duration="424000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit.">
       <created>1691094835064</created>
@@ -120,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691766606988</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="moved extension to separate folder">
+      <created>1691846226753</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1691846226753</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +142,7 @@
     <MESSAGE value="Added special handling for facebook links" />
     <MESSAGE value="added loading cursor" />
     <MESSAGE value="added icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="added icon" />
+    <MESSAGE value="moved extension to separate folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved extension to separate folder" />
   </component>
 </project>
