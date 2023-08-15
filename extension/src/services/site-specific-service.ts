@@ -14,10 +14,8 @@ export class SiteSpecificService {
     }
 
     private static extractOriginalURLFromFacebook(facebookURL: string): string | null {
-        // Parse the URL to get query parameters
         let url = new URL(facebookURL);
 
-        // Extract the 'u' parameter and decode it
         let originalURL = url.searchParams.get("u");
         if (originalURL) {
             return decodeURIComponent(originalURL);
