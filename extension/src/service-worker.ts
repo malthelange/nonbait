@@ -140,6 +140,19 @@ function onClick(info: any, tab: any) {
     }));
 }
 
+// background.js or popup.js
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.type !== "contentMessage") {
+    return;
+  }
+  console.log("got message", message);
+  FirestoreService.getHeadlines(message.data).then(
+    (headlines) => {
+      sendResponse(headlines);
+    });
+});
+
+
 function getApiKey(callback: any) {
   chrome.storage.local.get(["apiKey"], (result) => {
     callback(result.apiKey);

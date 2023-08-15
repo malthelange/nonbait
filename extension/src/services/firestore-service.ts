@@ -1,8 +1,9 @@
-const addHeadlineUrl = "https://europe-west3-nonbait.cloudfunctions.net/addHeadline";
-
 export class FirestoreService {
+  private static ADD_HEADLINE_URL = "https://europe-west3-nonbait.cloudfunctions.net/addHeadline";
+  private static GET_HEADLINES_URL = "https://europe-west3-nonbait.cloudfunctions.net/getHeadlines";
+
   public static async addHeadline(link: string, headline: string) {
-    await fetch(addHeadlineUrl, {
+    await fetch(FirestoreService.ADD_HEADLINE_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -12,5 +13,15 @@ export class FirestoreService {
         link: link,
       }),
     });
+  }
+
+  public static async getHeadlines(links: string[]) {
+    let url = new URL(FirestoreService.GET_HEADLINES_URL);
+    url.searchParams.set("links", links.join(","));
+    return await fetch(url.toString())
+      .then(response => {
+        console.log(response);
+        return response.text();
+      });
   }
 }
