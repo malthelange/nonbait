@@ -21,7 +21,7 @@ export class FirestoreService {
     url.searchParams.set("link", link);
     return await fetch(url.toString())
       .then(response => {
-        return response.text();
+        return response.json();
       });
   }
 
@@ -30,7 +30,6 @@ export class FirestoreService {
     url.searchParams.set("links", links.join(","));
     return await fetch(url.toString())
       .then(response => {
-        console.log(response);
         return response.text();
       });
   }

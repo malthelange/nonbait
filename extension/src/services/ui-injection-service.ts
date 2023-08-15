@@ -1,7 +1,6 @@
 export class UiInjectionService {
     private static setCursorWaiting() {
         document.body.style.cursor = "wait";
-        console.log("test set");
 
     }
 
@@ -14,7 +13,6 @@ export class UiInjectionService {
 
     private static unsetCursorWaiting() {
         document.body.style.cursor = "";
-        console.log("test unset");
     }
 
     public static stopCursorWaiting(id: any) {

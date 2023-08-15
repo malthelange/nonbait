@@ -1,6 +1,6 @@
 {
   "name": "Non-bait",
-  "version": "0.2",
+  "version": "0.3",
   "description": "The extension allows you to replace clickbait headlines",
   "host_permissions": [
     "*://*/*"

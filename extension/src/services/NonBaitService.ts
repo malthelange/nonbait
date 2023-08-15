@@ -3,6 +3,11 @@ import {UiInjectionService} from "./ui-injection-service";
 import {OpenaiService} from "./service-worker-services/openai-service";
 import {FirestoreService} from "./service-worker-services/firestore-service";
 
+export interface FireStoreHeadlineEntry {
+    headline: string;
+    link: string;
+}
+
 export class NonBaitService {
     public static onClick(info: any, tab: any) {
         if (info.menuItemId !== "getHeadline") {
@@ -12,7 +17,18 @@ export class NonBaitService {
         if (link == null) {
             return;
         }
-        NonBaitService.getNewHeadlineAndRespondToContentScript(tab, link);
+
+        FirestoreService.getHeadline(link).then(
+            (result: FireStoreHeadlineEntry[]) => {
+                if(result.length == 0) {
+                    NonBaitService.getNewHeadlineAndRespondToContentScript(tab, link);
+                    return;
+                }
+                const firstHeadlineSuggestion = result[0].headline;
+                chrome.tabs.sendMessage(tab.id, {content: firstHeadlineSuggestion});
+                UiInjectionService.stopCursorWaiting(tab.id);
+            }
+        )
     }
 
     private static getNewHeadlineAndRespondToContentScript(tab: any, link: string) {
@@ -25,13 +41,9 @@ export class NonBaitService {
     }
 
     private static async handleResponseFromArticleSite(tab: any, html: string, link: string) {
-        console.log(link);
-        console.log(html);
         const response = await chrome.tabs.sendMessage(tab.id, {html});
-        console.log(response.content);
         OpenaiService.queryOpenAIForHeadline(response.content, (error: any, result: string) => {
             if (error) {
-                console.error("Error:", error);
             } else {
                 NonBaitService.handleResponseFromOpenAI(tab, result, link);
             }
@@ -41,14 +53,6 @@ export class NonBaitService {
 
     private static handleResponseFromOpenAI(tab: any, result: string, link: string) {
         chrome.tabs.sendMessage(tab.id, {content: result});
-        FirestoreService.addHeadline(link, result).then(
-            () => {
-                console.log("Headline added");
-            },
-            (error) => {
-                console.error("Error:", error);
-            },
-        );
-        console.log("Response:", result);
+        FirestoreService.addHeadline(link, result);
     }
 }
