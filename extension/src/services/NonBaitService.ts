@@ -12,7 +12,7 @@ export class NonBaitService {
         if (link == null) {
             return;
         }
-        this.getNewHeadlineAndRespondToContentScript(tab, link);
+        NonBaitService.getNewHeadlineAndRespondToContentScript(tab, link);
     }
 
     private static getNewHeadlineAndRespondToContentScript(tab: any, link: string) {
@@ -20,7 +20,7 @@ export class NonBaitService {
         fetch(link)
             .then((response) => response.text())
             .then(async (html) => {
-                await this.handleResponseFromArticleSite(tab, html, link);
+                await NonBaitService.handleResponseFromArticleSite(tab, html, link);
             });
     }
 
@@ -33,7 +33,7 @@ export class NonBaitService {
             if (error) {
                 console.error("Error:", error);
             } else {
-                this.handleResponseFromOpenAI(tab, result, link);
+                NonBaitService.handleResponseFromOpenAI(tab, result, link);
             }
             UiInjectionService.stopCursorWaiting(tab.id);
         });
