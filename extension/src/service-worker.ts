@@ -1,4 +1,4 @@
-import {FirestoreService} from "./services/firestore-service";
+import {FirestoreService} from "./services/service-worker-services/firestore-service";
 import {NonBaitService} from "./services/NonBaitService";
 
 chrome.contextMenus.onClicked.addListener(NonBaitService.onClick);

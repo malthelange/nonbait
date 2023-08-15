@@ -1,7 +1,7 @@
 import {SiteSpecificService} from "./site-specific-service";
 import {UiInjectionService} from "./ui-injection-service";
-import {OpenaiService} from "./openai-service";
-import {FirestoreService} from "./firestore-service";
+import {OpenaiService} from "./service-worker-services/openai-service";
+import {FirestoreService} from "./service-worker-services/firestore-service";
 
 export class NonBaitService {
     public static onClick(info: any, tab: any) {
